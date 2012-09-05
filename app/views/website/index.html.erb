@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MightBuy for Businesses</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="/assets/bootstrap.css" rel="stylesheet">
+    <link href="/assets/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/assets/docs.css" rel="stylesheet">
+    <link href="/assets/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/apple-touch-icon-57-precomposed.png">
+
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+	<% [:notice, :error, :alert].each do |level| %>
+	  <% unless flash[level].blank? %>
+	    <div class="alert-message alert alert-error">
+	      <a class="close" href="#">×</a>
+	      <%= content_tag :div, flash[level] %>
+	    </div>
+	  <% end %>
+	<% end %>
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="https://mightbuy.it">MightBuy</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="/">Home</a>
+              </li>
+            </ul>
+			<%= form_for("user", :url => user_session_path, :html => {:class => "navbar-form pull-right"}) do |f| %>
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="password" placeholder="Password">
+              <button type="submit" class="btn">Sign in</button>
+			<% end %>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="jumbotron masthead">
+  <div class="container">
+    <h1>MightBuy</h1>
+    <p>For Businesses</p>
+    <p><a href="/" class="btn btn-primary btn-large">Get Started</a></p>
+    <ul class="masthead-links">
+      <li><a href="http://github.com/twitter/bootstrap">Pricing</a></li>
+      <li>Version 1.0</li>
+    </ul>
+  </div>
+</div>
+
+<div class="bs-docs-social">
+  <div class="container">
+    <ul class="bs-docs-social-buttons">
+      <li class="follow-btn">
+        <a href="https://twitter.com/mightbuy" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @MightBuy</a>
+      </li>
+      <li class="tweet-btn">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://businesses.mightbuy.it" data-count="horizontal" data-via="MightBuy" data-related="">Tweet</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="marketing">
+
+    <h1>Introducing MightBuy for Businesses.</h1>
+    <p class="marketing-byline">It's Pretty Cool.</p>
+
+    <div class="row-fluid">
+      <div class="span4">
+        <img src="/assets/bs-docs-twitter-github.png">
+        <h2>Get your potential customers in your store.</h2>
+        <p>Using Apple's new app <a href="http://www.apple.com/ios/ios6/#passbook">Passbook</a>.  We allow you to offer your customers deals on products.  Not only does a deal allow them to get a better discount, it also alerts them when they are near your store.</p>
+      </div>
+      <div class="span4">
+        <img src="/assets/bs-docs-responsive-illustrations.png">
+        <h2>Analytics</h2>
+        <p>Get valuable analytics about what products your customers want to buy.  You can find what is in the most demand and create deals to get people in your store to buy that product and more</p>
+      </div>
+      <div class="span4">
+        <img src="/assets/bs-docs-bootstrap-features.png">
+        <h2>Give your customers exclusive deals</h2>
+        <p>Our platform allows your sales people to give customers exclusive in store deals on what they want.  Sales people can even add a item to a users account (with the users permission)</p>
+      </div>
+    </div>
+
+    <hr class="soften">
+
+    <h1>Screenshots</h1>
+    <p class="marketing-byline">Coming Soon</p>
+  </div>
+
+</div>
+
+
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <ul class="footer-links">
+          <li><a href="https://www.mightbuy.it">Main Site</a></li>
+        </ul>
+      </div>
+    </footer>
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="/assets/jquery.js"></script>
+    <script src="/assets/google-code-prettify/prettify.js"></script>
+    <script src="/assets/bootstrap-transition.js"></script>
+    <script src="/assets/bootstrap-alert.js"></script>
+    <script src="/assets/bootstrap-modal.js"></script>
+    <script src="/assets/bootstrap-dropdown.js"></script>
+    <script src="/assets/bootstrap-scrollspy.js"></script>
+    <script src="/assets/bootstrap-tab.js"></script>
+    <script src="/assets/bootstrap-tooltip.js"></script>
+    <script src="/assets/bootstrap-popover.js"></script>
+    <script src="/assets/bootstrap-button.js"></script>
+    <script src="/assets/bootstrap-collapse.js"></script>
+    <script src="/assets/bootstrap-carousel.js"></script>
+    <script src="/assets/bootstrap-typeahead.js"></script>
+    <script src="/assets/bootstrap-affix.js"></script>
+    <script src="/assets/application.js"></script>
+
+
+
+  </body>
+</html>
