@@ -25,9 +25,16 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/apple-touch-icon-57-precomposed.png">
 
+  <script>
+	$('.navbar').scrollspy();
+	$('[data-spy="scroll"]').each(function () {
+	  var $spy = $(this).scrollspy('refresh')
+	});
+  </script>
+
   </head>
 
-  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+  <body data-spy="scroll" data-target=".navbar">
 	<% [:notice, :error, :alert].each do |level| %>
 	  <% unless flash[level].blank? %>
 	    <div class="alert-message alert alert-error">
@@ -50,8 +57,14 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active">
-                <a href="/">Home</a>
+                <a href="#home">Home</a>
               </li>
+			  <li>
+			  	<a href="#features">Features</a>
+			  </li>
+			  <li>
+			  	<a href="#passbook">Passbook</a>
+			  </li>
             </ul>
 			<%= form_for("user", :url => user_session_path, :html => {:class => "navbar-form pull-right"}) do |f| %>
               <input class="span2" type="text" placeholder="Email">
@@ -64,7 +77,7 @@
       </div>
     </div>
 
-<div class="jumbotron masthead">
+<div id="home" class="jumbotron masthead">
   <div class="container">
     <h1>MightBuy</h1>
     <p>For Businesses</p>
@@ -91,7 +104,7 @@
 
 <div class="container">
 
-  <div class="marketing">
+  <div id="features" class="marketing">
 
     <h1>Introducing MightBuy for Businesses.</h1>
     <p class="marketing-byline">It's Pretty Cool.</p>
@@ -115,9 +128,32 @@
     </div>
 
     <hr class="soften">
+	<div id="passbook">
+    	<h1>Passbook</h1>
+	    <p class="marketing-byline">How we deliver deals to your customers for use in your retail stores</p>
 
-    <h1>Screenshots</h1>
-    <p class="marketing-byline">Coming Soon</p>
+		<img src="/assets/ios_screenshot.png" width="320px" class="img-polaroid">
+		<legend class="marketing-byline" style="font-size: 15px;">An Example Coupon in Passbook</legend>
+		<p>In the image above, you can see a example coupon.  In this case it is for a store called "Joe's Clothes".  When a user adds a item to their MightBuy account and you offering a deal on it (in your retail store), they will be prompted to add the pass to their phone.  You can then scan the coupon or we can show the barcode in plain text so you can verify it is correct</p>
+	
+		<br>
+		<br>
+		<br>
+		<br>
+	
+		<img src="/assets/notification_screenshot.png" width="320px" class="img-polaroid">
+		<legend class="marketing-byline" style="font-size: 15px;">An Example Notification on The User's Phone</legend>
+		<p>When a user gets close to your store, they will get a notification reminding them of the offer.</p>
+	
+		<br>
+		<br>
+		<br>
+		<br>
+	
+		<img src="/assets/customizable_screenshot.png" width="320px" class="img-polaroid">
+		<legend class="marketing-byline" style="font-size: 15px;">An Example of How a Coupon Can Be Customized</legend>
+		<p>We give you many ways to customize the coupon to fit in with your brand including but not limited to: background color, text color, title and space on the back of the digital coupon.</p>
+	</div>
   </div>
 
 </div>
